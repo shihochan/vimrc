@@ -8,7 +8,7 @@ set showcmd
 
 " color
 syntax on
-colorscheme flatland
+" colorscheme flatland
 set background=dark
 
 " Search
@@ -49,10 +49,14 @@ filetype off
 
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim
-    call neobundle#rc(expand('~/.vim/bundle/'))
+    call neobundle#begin(expand('~/.vim/bundle/'))
+      NeoBundleFetch 'Shougo/neobundle.vim'
+    call neobundle#end()
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
+  NeoBundleFetch 'Shougo/neobundle.vim'
+call neobundle#end()
 
 " originalrepos on github
 NeoBundle 'vim-jp/vimdoc-ja'
